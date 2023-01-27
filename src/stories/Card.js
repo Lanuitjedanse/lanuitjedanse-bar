@@ -27,7 +27,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard(props) {
+export default function BarCard(props) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -61,7 +61,7 @@ export default function RecipeReviewCard(props) {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          <MusicChips items={props.items} hasRight={false}></MusicChips>
+          <MusicChips items={props.items}></MusicChips>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

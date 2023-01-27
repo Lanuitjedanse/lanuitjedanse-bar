@@ -3,10 +3,7 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 
 export default function MusicChips(props) {
-  const [items, setItems] = React.useState([
-    { id: 0, genre: "techno" },
-    { id: 1, genre: "house" },
-  ]);
+  const [items, setItems] = React.useState(props.items);
 
   const getGenreColor = (genre) => {
     if (genre === "house") {
@@ -18,10 +15,8 @@ export default function MusicChips(props) {
     return "default";
   };
 
-  const submitDelete = (item) => {
-    console.log(item);
-    const newItems = items.filter((currentItem) => currentItem.id !== item.id);
-    setItems(newItems);
+  const handleDelete = (item) => {
+    items.filter((currentItem) => currentItem.id !== item.id);
   };
 
   return (
@@ -31,11 +26,13 @@ export default function MusicChips(props) {
           return (
             <Chip
               key={index}
-              label={item.genre.toUpperCase()}
+              label={item.genre}
               color={getGenreColor(item.genre)}
               variant="stroked"
               size="small"
-              onDelete={props.hasRight ? submitDelete(item) : undefined}
+              onDelete={
+                item.deletable ? (item) => handleDelete(item) : undefined
+              }
             />
           );
         })}

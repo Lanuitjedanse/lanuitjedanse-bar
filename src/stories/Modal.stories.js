@@ -1,23 +1,17 @@
 import React from "react";
 
-import MusicChips from "./MusicChips";
+import Modal from "./Modal";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "MusicChips",
-  component: MusicChips,
+  title: "Modal",
+  component: Modal,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <MusicChips {...args} />;
+const Template = (args) => <Modal {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  items: [
-    { genre: "techno", deletable: true },
-    { genre: "house", deletable: false },
-    { genre: "hiphop", deletable: true },
-  ],
-};
+Primary.args = {};
