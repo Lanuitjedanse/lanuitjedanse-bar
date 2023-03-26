@@ -11,10 +11,10 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import LocalBarIcon from "@mui/icons-material/LocalBar";
 import NightlifeIcon from "@mui/icons-material/Nightlife";
 import MusicChips from "./MusicChips";
+import CardMenu from "./CardMenu.js";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -46,11 +46,7 @@ export default function BarCard(props) {
             )}
           </Avatar>
         }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
+        action={<CardMenu editable={props.editable} />}
         title={props.name}
       />
       <CardMedia

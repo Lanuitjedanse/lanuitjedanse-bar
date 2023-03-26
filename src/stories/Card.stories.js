@@ -21,8 +21,9 @@ Primary.args = {
   address: "3 sesame street, 10249 Berlin",
   website: "google.com",
   items: [
-    { genre: "house", deletable: true },
-    { genre: "techno", deletable: false },
+    { name: "house", deletable: true },
+    { name: "techno", deletable: false },
   ],
   dance: true,
+  editable: true,
 };
