@@ -26,8 +26,7 @@ export default function MusicChips(props) {
           return (
             <Chip
               key={index}
-              label={item.genre}
-              color={getGenreColor(item.genre)}
+              label={item.name}
               variant="stroked"
               size="small"
               onDelete={
